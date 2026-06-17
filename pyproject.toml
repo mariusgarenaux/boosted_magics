@@ -1,0 +1,10 @@
+[project]
+name = "boosted-magics"
+version = "0.0.1"
+description = "Metakernel magics with TAB completion"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["metakernel>=1.0.0", "statikomand>=0.1.1"]
+
+[dependency-groups]
+dev = ["jupyter-console>=6.6.3"]
