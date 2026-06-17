@@ -1,8 +1,12 @@
 # Boosted Magics
 
-Python package that extends the magics of metakernel to provide TAB completion on parameters of the magic, with custom functions.
+Python package that extends the magics of metakernel to provide TAB completion (complete_request messages) on arguments of the magic.
 
-Uses the same mechanics as python argparse library.
+> Supports :
+>
+> - argument name completion
+> - argument value completion, with custom `completer` function
+> - parsing of magic command line with argparse
 
 ```bash
 pip install boosted-magics
@@ -10,7 +14,7 @@ pip install boosted-magics
 
 ## Creating a Boosted Magic
 
-Boosted Magic subclasses Metakernel Magic. To have parameter completion, you need to replace @option decorator of Magic with a @boosted_option, as below :
+Boosted Magic subclasses Metakernel Magic, so the magic declaration is the same. To have argument completion, you have to replace @option decorator of Magic with a @boosted_option, as below :
 
 ```python
 from boosted_magics import boosted_option, BoostedMagic
@@ -58,9 +62,9 @@ The boosted_option uses [argparse](https://docs.python.org/3/library/argparse.ht
 
 > This allows flags (`action='store_true'`), ...
 
-For parameter completion, boosted_magics uses statikomand, a custom package that mimics argparse mechanism for uncomplete commands. Completion is then proposed only for arguments that are not present on the command line.
+For argument completion, boosted_magics uses statikomand, a custom package that mimics argparse mechanism for uncomplete commands. Completion is then proposed only for arguments that are not present on the command line.
 
-You can create a custom completer function, that will be called just after you added the parameter name (see example above). However, you will have to type at least the first letter of the argument value to get completion proposals.
+You can create a custom completer function, that will be called just after you added the argument name (see example above). However, you will have to type at least the first letter of the argument value to get completion proposals.
 
 ## Troubleshooting
 
