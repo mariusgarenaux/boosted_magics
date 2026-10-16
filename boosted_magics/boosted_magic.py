@@ -10,7 +10,7 @@ import argparse
 from statikomand import KomandParser
 
 _F = TypeVar("_F", bound=Callable[..., Any])
--
+
 
 class BoostedMagic(Magic):
     """
