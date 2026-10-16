@@ -1,17 +1,17 @@
 [project]
 name = "boosted-magics"
-version = "0.0.1"
+version = "0.0.2"
 description = "Metakernel magics with TAB completion"
 readme = "README.md"
-requires-python = ">=3.12"
-dependencies = ["metakernel>=1.0.0", "statikomand>=0.1.1"]
+requires-python = ">=3.11"
+dependencies = ["metakernel>=1.0.4", "statikomand>=0.1.1"]
 
-[tool.setuptools.packages.find]
-include = ["./boosted_magics"]
+[tool.hatch.build.targets.sdist]
+include = ["/boosted_magics"]
 
 [dependency-groups]
-dev = ["jupyter-console>=6.6.3"]
+dev = ["jupyter-client>=8.9.1", "jupyter-console>=6.6.3"]
 
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling>=1.10.0"]
+build-backend = "hatchling.build"
