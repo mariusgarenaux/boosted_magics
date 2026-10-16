@@ -68,18 +68,4 @@ You can create a custom completer function, that will be called just after you a
 
 ## Troubleshooting
 
-TAB completion for magic can be broken (some completion erase all line) with older metakernel versions (before 1.0.4). To fix it, install the 1.0.4 (or above) manually within the project that uses boosted-magics :
-
-```bash
-uv add "metakernel @ git+https://github.com/Calysto/metakernel.git@afd3ddd"
-```
-
-or without `uv`:
-
-```bash
-git clone https://github.com/Calysto/metakernel
-cd metakernel
-git checkout afd3ddd
-pip install -e .
-cd ..
-```
+TAB completion for magic can be broken (some completion erase all line) with older metakernel versions (before 1.0.4). This is the reason why metakernel above 1.0.4 is mandatory. 
