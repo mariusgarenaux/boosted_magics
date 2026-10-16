@@ -38,7 +38,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "metakernel", specifier = ">=1.0.4" },
-    { name = "statikomand", specifier = ">=0.1.1" },
+    { name = "statikomand", specifier = ">=0.2.0" },
 ]
 
 [package.metadata.requires-dev]
@@ -545,9 +545,12 @@ wheels = [
 
 [[package]]
 name = "statikomand"
-version = "0.1.1"
+version = "0.2.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/65/0c/94256e4c85966e12b18d7e8134a332ab884d23d978606ea04f44d21abf90/statikomand-0.1.1.tar.gz", hash = "sha256:224a46be7efd13a2caafabc3db841ede21927f81fa20099bd37a362a17dd3d40", size = 6835, upload-time = "2026-02-26T14:36:26.128Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/5b/0c/17da9617999ed3e548a80edb1edd517d01ba32a5ff51815fcca6fa47f610/statikomand-0.2.0.tar.gz", hash = "sha256:637fbe5a86240bff650cf46319791df8595fb2a0ca0013f37514c4718aaf7853", size = 7061, upload-time = "2026-10-16T11:19:42.663Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3e/b2/89fa24d920efd8b357da77dde5031515528cee64c346699a79910bcf45fa/statikomand-0.2.0-py3-none-any.whl", hash = "sha256:cb818e9364cac79cdcb2e2087cf840246c407cd7b037fc59daf99063d6b3f75f", size = 7025, upload-time = "2026-10-16T11:19:41.703Z" },
+]
 
 [[package]]
 name = "tornado"

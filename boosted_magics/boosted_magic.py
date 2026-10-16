@@ -10,7 +10,7 @@ import argparse
 from statikomand import KomandParser
 
 _F = TypeVar("_F", bound=Callable[..., Any])
-
+-
 
 class BoostedMagic(Magic):
     """
@@ -104,6 +104,7 @@ class BoostedMagic(Magic):
         self.kernel.log.info(f"Info boosted magic : {info}")
         func = None
         for each_attr in dir(self):
+            # self.kernel.log.debug(f"Looping on attributes : {each_attr}")
             if each_attr.startswith("line"):
                 func = getattr(self, each_attr)
                 break
@@ -111,6 +112,7 @@ class BoostedMagic(Magic):
             # if each_attr.startswith("cell"):
             #     func = getattr(self, each_attr)
             #     break
+        self.kernel.log.debug(f"Catched func : {func}")
         if func is None:
             self.kernel.log.warning("Could not find any magic to complete.")
             return []
@@ -120,6 +122,7 @@ class BoostedMagic(Magic):
             )
             return []
         boosted_parser: KomandParser | bool = getattr(func, "boosted_parser", False)
+        self.kernel.log.debug(f"Got access to komand parser : {boosted_parser}")
         if not boosted_parser:
             self.kernel.log.warning(
                 "Could not find boosted parser for magic, but has_boosted_options is True. Not completing."
@@ -136,6 +139,10 @@ class BoostedMagic(Magic):
             )
 
         # finally calls complete method of boosted parser
+        self.kernel.log.debug(f"Args given to komand parser : {args}")
+        self.kernel.log.debug(
+            f"Info about the komand parser : {boosted_parser.dest_completers}"
+        )
         try:
             completed = boosted_parser.complete(args)
         except Exception:
@@ -144,6 +151,7 @@ class BoostedMagic(Magic):
             )
             return []
 
+        self.kernel.log.debug(f"Completed out from komand parser : {completed}")
         if len(args) > 0:
             self.kernel.log.info(f"Modifying -- and - tokens : {completed}")
             result = []
@@ -215,7 +223,6 @@ def _boosted_parse_args(
         args = " ".join(args)
     args = _split_args(args)
 
-    # raise ValueError(f"dajkbz {args}")
     if getattr(func, "has_boosted_options", False) and getattr(
         func, "boosted_parser", False
     ):

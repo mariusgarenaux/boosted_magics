@@ -2,6 +2,10 @@ from test_boosted_kernel import TestKernel
 from boosted_magics import boosted_option, BoostedMagic
 
 
+def my_completer(word, rank):
+    return ["customa1", "customa2"]
+
+
 class ExampleMagic(BoostedMagic):
     @boosted_option(
         "--very_long_option",
@@ -19,8 +23,7 @@ class ExampleMagic(BoostedMagic):
         "-a",
         "--an_option_with_custom_completion_method",
         help="An option with custom completion method",
-        # choices=["a1, a2"],
-        completer=lambda w, r: ["customa1", "customa2"],
+        completer=my_completer,
     )
     def line_example(
         self,

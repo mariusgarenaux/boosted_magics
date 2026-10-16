@@ -1,5 +1,11 @@
 {
-  "argv": ["python", "-m", "test_boosted_kernel", "-f", "{connection_file}"],
-  "display_name": "Boosted Magics Test Kernel",
-  "language": "text"
+    "argv": [
+        "python",
+        "-m",
+        "test_boosted_kernel",
+        "-f",
+        "{connection_file}"
+    ],
+    "display_name": "Boosted Magics Test Kernel",
+    "language": "text"
 }

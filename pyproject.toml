@@ -4,7 +4,7 @@ version = "0.0.2"
 description = "Metakernel magics with TAB completion"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = ["metakernel>=1.0.4", "statikomand>=0.1.1"]
+dependencies = ["metakernel>=1.0.4", "statikomand>=0.2.0"]
 
 [tool.hatch.build.targets.sdist]
 include = ["/boosted_magics"]
