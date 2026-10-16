@@ -69,3 +69,5 @@ You can create a custom completer function, that will be called just after you a
 ## Troubleshooting
 
 TAB completion for magic can be broken (some completion erase all line) with older metakernel versions (before 1.0.4). This is the reason why metakernel above 1.0.4 is mandatory. 
+
+For python 3.11 version, some flag completion might be broken. Consider upgrading to >3.11
