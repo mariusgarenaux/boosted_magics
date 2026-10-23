@@ -1,6 +1,6 @@
 # Boosted Magics
 
-:::warning
+::: warning
 Project has migrated to : https://gitlab.com/logistica-dev/jupyter-agent-kernel/magics/boosted-magics
 :::
 
