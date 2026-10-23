@@ -1,5 +1,9 @@
 # Boosted Magics
 
+:::warning
+Project has migrated to : https://gitlab.com/logistica-dev/jupyter-agent-kernel/magics/boosted-magics
+:::
+
 Python package that extends the magics of metakernel to provide TAB completion (complete_request messages) on arguments of the magic.
 
 > Supports :
